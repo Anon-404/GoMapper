@@ -2,61 +2,40 @@ package main
 
 import (
     "fmt"
-    "net/http"
-    "strings"
-    "io/ioutil"
+    "net"
+    "strconv"
+    "sync"
+    "time"
+    "os"
 )
 
-func postrqst(){
-
-    link := "https://github.com"
-/*
-    jsnDta := strings.NewReader(`
-        {
-            "Name":"William",
-            "Age":18,
-            "Sec":"Penetration testing"
-        }
-    `)
-*/
-    resp, err := http.Get(link)
-    if err != nil {
-        panic(err)
+func portScan(wg *sync.WaitGroup, i int) {
+    defer wg.Done()
+    time.Sleep(3 * time.Millisecond)
+    link := os.Args[1] // Changed from os.Args[2] to os.Args[1]
+    address := link + ":" + strconv.Itoa(i) // Added ":" between
+ the IP and port
+    conn, err := net.Dial("tcp", address)
+    if err == nil {
+        fmt.Println("[+] Open port:", i)
+        conn.Close()
+    } else {
+        // fmt.Println("[-] Closed port:", i)
     }
-
-    defer resp.Body.Close()
-
-    data, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        panic(err)
-    }
-
-    fmt.Println(string(data))
-
 }
 
-func main(){
-
-    link := "https://github.com"
-  
-    json := strings.NewReader(`
-        {
-            "Name":"William",
-            "Age":18
-        }
-    `)
-    rqst, err := http.Post(link,"application/json",json)
-  
-    if err != nil {
-        panic(err)
+func main() {
+    if len(os.Args) < 2 {
+        fmt.Println("Usage: go run portscan.go <target-ip>")
+        return
     }
 
-    defer rqst.Body.Close()
+    var wg sync.WaitGroup
 
-    resp, err := ioutil.ReadAll(rqst.Body)
-    if err != nil {
-        panic(err)
+    for i := 1; i <= 1024; i++ {
+        wg.Add(1)
+        go portScan(&wg, i)
     }
 
-    fmt.Println(string(resp))
+    wg.Wait()
 }
