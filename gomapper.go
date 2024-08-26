@@ -4,38 +4,87 @@ import (
     "fmt"
     "net"
     "strconv"
-    "sync"
-    "time"
     "os"
+    "sync"
+
+    "github.com/fatih/color"
 )
 
-func portScan(wg *sync.WaitGroup, i int) {
+func banner() {
+    banner := `
+   ______      __  ___
+  / ____/___  /  |/  /___ _____  ____  ___  _____
+ / / __/ __ \/ /|_/ / __ \/ __ \/ __ \/ _ \/ ___/
+/ /_/ / /_/ / /  / / /_/ / /_/ / /_/ /  __/ /
+\____/\____/_/  /_/\__,_/ .___/ .___/\___/_/
+                   /_/   /_/
+`
+    cyan := color.New(color.FgCyan)
+
+    boldCyan := cyan.Add(color.Bold)
+    boldCyan.Println(banner)
+}
+
+func hlpMnu() {
+    fmt.Println("Usage: GoMapper <option> <domain/ip>")
+    fmt.Println("\nOptions:")
+    fmt.Printf("\n%s, %s : To get the help page\n", color.BlueString("--help"),color.GreenString("-h"
+))
+    fmt.Printf("%s, %s : To perform a port scan\n", color.BlueString("--networkScan"),color.GreenStri
+ng("-n"))
+
+}
+
+func portScan(wg *sync.WaitGroup, domain string, port int) {
     defer wg.Done()
-    time.Sleep(3 * time.Millisecond)
-    link := os.Args[1] // Changed from os.Args[2] to os.Args[1]
-    address := link + ":" + strconv.Itoa(i) // Added ":" between
- the IP and port
-    conn, err := net.Dial("tcp", address)
+    link := domain + ":" + strconv.Itoa(port)
+    _, err := net.Dial("tcp", link)
     if err == nil {
-        fmt.Println("[+] Open port:", i)
-        conn.Close()
+        fmt.Println(port,"\b/tcp")
     } else {
-        // fmt.Println("[-] Closed port:", i)
+        // fmt.Println("Port closed:", port)
     }
 }
 
 func main() {
+    banner()
+
     if len(os.Args) < 2 {
-        fmt.Println("Usage: go run portscan.go <target-ip>")
+        fmt.Println("Usage: GoMapper <option> [domain/ip]")
+        fmt.Println("Manual: GoMapper -h")
         return
     }
 
-    var wg sync.WaitGroup
-
-    for i := 1; i <= 1024; i++ {
-        wg.Add(1)
-        go portScan(&wg, i)
+    option := os.Args[1]
+    if option == "-h" || option == "--help" {
+        hlpMnu()
+        return
     }
 
-    wg.Wait()
-}
+    if len(os.Args) < 3 {
+        fmt.Println("Error: Domain/IP missing")
+        fmt.Println("Usage: GoMapper <option> <domain/ip>")
+        fmt.Println("Manual: GoMapper -h")
+        return
+    }
+
+    domain := os.Args[2]
+
+    if option == "-n" || option == "--networkScan" {
+        var wg sync.WaitGroup
+        fmt.Print("[+] Scanning ")
+        blue := color.New(color.FgBlue)
+        boldBlue := blue.Add(color.Bold)
+        boldBlue.Print(domain,"\n\n")
+        for port := 1; port <= 65535; port++ {
+            wg.Add(1)
+            go portScan(&wg, domain, port)
+        }
+        wg.Wait()
+    } else {
+
+        red := color.New(color.FgRed)
+        boldRed := red.Add(color.Bold)
+        boldRed.Println("[-] Unknown option",option)
+        return
+    }
