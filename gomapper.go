@@ -88,3 +88,4 @@ func main() {
         boldRed.Println("[-] Unknown option",option)
         return
     }
+}
