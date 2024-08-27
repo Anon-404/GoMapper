@@ -1,4 +1,4 @@
-module golang
+module github.com/Anon-404/GoMapper
 
 go 1.23.0
 
