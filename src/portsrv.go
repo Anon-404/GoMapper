@@ -4,292 +4,399 @@ var Service = "Unknown"
 
 func PortSrv(port int) {
     switch port {
-case 80:
-    Service = "http"
-case 53:
-    Service = "domain"
-case 443:
-    Service = "https"
-case 22:
-    Service = "ssh"
-case 21:
-    Service = "ftp"
-case 23:
-    Service = "telnet"
-case 25:
-    Service = "smtp"
-case 123:
-    Service = "ntp"
-case 2086:
-    Service = "cPanel(non-SSL)"
-case 2087:
-    Service = "cPanel(SSL)"
-case 2052:
-    Service = "cloudflare(http-alt)"
-case 2053:
-    Service = "cloudflare(https-alt)"
-case 2096:
-    Service = "cPanel-Webmail(SSL)"
-case 2095:
-    Service = "cPanel-Webmail(non-SSL)"
-case 445:
-    Service = "smb"
-case 67:
-    Service = "dhcp"
-case 110:
-    Service = "pop3"
-case 143:
-    Service = "imap"
-case 465:
-    Service = "smtps"
-case 990:
-    Service = "ftps"
-case 389:
-    Service = "ldap"
-case 636:
-    Service = "ldaps"
-case 3306:
-    Service = "mysql"
-case 5432:
-    Service = "postgresql"
-case 3389:
-    Service = "rdp"
-case 6379:
-    Service = "redis"
-case 27017:
-    Service = "mongodb"
-case 9200:
-    Service = "elasticsearch"
-case 11211:
-    Service = "memcached"
-case 161:
-    Service = "snmp"
-case 179:
-    Service = "bgp"
-case 88:
-    Service = "kerberos"
-case 500:
-    Service = "ike"
-case 5060:
-    Service = "sip"
-case 1883:
-    Service = "mqtt"
-case 5900:
-    Service = "vnc"
-case 69:
-    Service = "tftp"
-case 5222:
-    Service = "xmpp"
-case 9418:
-    Service = "git"
-case 873:
-    Service = "rsync"
-case 2049:
-    Service = "nfs"
-case 3128:
-    Service = "squid"
-case 5901:
-    Service = "vnc"
-case 3000:
-    Service = "node"
-case 7000:
-    Service = "afp"
-case 9000:
-    Service = "php-fpm"
-case 3690:
-    Service = "svn"
-case 4444:
-    Service = "metasploit"
-case 5061:
-    Service = "sips"
-case 7080:
-    Service = "http-proxy"
-case 8443:
-    Service = "https-alt"
-case 2022:
-    Service = "bitbucket"
-case 25565:
-    Service = "minecraft"
-case 6667:
-    Service = "irc"
-case 10000:
-    Service = "webmin"
-case 49152:
-    Service = "dynamic"
-case 5000:
-    Service = "upnp"
-case 6000:
-    Service = "x11"
-case 8000:
-    Service = "http-alt"
-case 8081:
-    Service = "http-alt"
-case 8888:
-    Service = "http-alt"
-case 7001:
-    Service = "weblogic"
-case 4848:
-    Service = "glassfish"
-case 5433:
-    Service = "postgresql"
-case 8880:
-    Service = "http-alt"
-case 6378:
-    Service = "redis"
-case 9300:
-    Service = "elasticsearch"
-case 9201:
-    Service = "elasticsearch"
-case 2181:
-    Service = "zookeeper"
-case 11214:
-    Service = "memcached"
-case 8082:
-    Service = "http-alt"
-case 27018:
-    Service = "mongodb"
-case 50000:
-    Service = "sap"
-case 2048:
-    Service = "oracle"
-case 9500:
-    Service = "apache"
-case 50030:
-    Service = "hadoop"
-case 50070:
-    Service = "hadoop"
-case 50090:
-    Service = "hadoop"
-case 61616:
-    Service = "activemq"
-case 8181:
-    Service = "websphere"
-case 9090:
-    Service = "websphere"
-case 7474:
-    Service = "neo4j"
-case 6001:
-    Service = "x11"
-case 28017:
-    Service = "mongodb"
-case 9202:
-    Service = "elasticsearch"
-case 9301:
-    Service = "elasticsearch"
-case 5001:
-    Service = "kafka"
-case 6002:
-    Service = "x11"
-case 3700:
-    Service = "cassandra"
-case 8444:
-    Service = "solr"
-case 5902:
-    Service = "vnc"
-case 8085:
-    Service = "http-alt"
-case 8086:
-    Service = "influxdb"
-case 8090:
-    Service = "webadmin"
-case 8087:
-    Service = "freepbx"
-case 9091:
-    Service = "webmin"
-case 3127:
-    Service = "backdoor"
-case 2222:
-    Service = "ssh"
-case 37015:
-    Service = "cassandra"
-case 37777:
-    Service = "torrent"
-case 15555:
-    Service = "backdoor"
-case 31000:
-    Service = "backdoor"
-case 49153:
-    Service = "dynamic"
-case 49154:
-    Service = "dynamic"
-case 49155:
-    Service = "dynamic"
-case 49156:
-    Service = "dynamic"
-case 49157:
-    Service = "dynamic"
-case 5431:
-    Service = "db2"
-case 2181:
-    Service = "zookeeper"
-case 16384:
-    Service = "epmap"
-case 2266:
-    Service = "ebgp"
-case 3846:
-    Service = "bmc"
-case 3715:
-    Service = "dawn"
-case 3701:
-    Service = "smtp"
-case 5480:
-    Service = "admin"
-case 6464:
-    Service = "flash"
-case 8088:
-    Service = "http-alt"
-case 9092:
-    Service = "kafka"
-case 8445:
-    Service = "apache"
-case 8008:
-    Service = "http-alt"
-case 6100:
-    Service = "x11"
-case 4445:
-    Service = "backdoor"
-case 5353:
-    Service = "mdns"
-case 6881:
-    Service = "torrent"
-case 33060:
-    Service = "mysqlx"
-case 20048:
-    Service = "nfs3"
-case 135:
-    Service = "msrpc"
-case 162:
-    Service = "snmptrap"
-case 5431:
-    Service = "db2"
-case 8001:
-    Service = "http-alt"
-case 7547:
-    Service = "cwmp"
-case 50001:
-    Service = "sap"
-case 5701:
-    Service = "hazelcast"
-case 1514:
-    Service = "syslog"
-case 8002:
-    Service = "http-alt"
-case 7575:
-    Service = "couchbase"
-case 6882:
-    Service = "torrent"
-case 1099:
-    Service = "rmi"
-case 2017:
-    Service = "robo"
-case 8099:
-    Service = "bigfix"
-case 9929:
-    Service = "rsync"
-case 31337:
-    Service = "back-orifice"
-default:
-    Service = "unknown"
-
+    case 1:
+        Service = "tcpmux"
+    case 7:
+        Service = "echo"
+    case 9:
+        Service = "discard"
+    case 11:
+        Service = "systat"
+    case 13:
+        Service = "daytime"
+    case 17:
+        Service = "qotd"
+    case 19:
+        Service = "chargen"
+    case 20:
+        Service = "ftp-data"
+    case 21:
+        Service = "ftp"
+    case 22:
+        Service = "ssh"
+    case 23:
+        Service = "telnet"
+    case 25:
+        Service = "smtp"
+    case 37:
+        Service = "time"
+    case 38:
+        Service = "rap"
+    case 39:
+        Service = "rlp"
+    case 42:
+        Service = "nameserver"
+    case 43:
+        Service = "whois"
+    case 44:
+        Service = "mpx"
+    case 53:
+        Service = "domain"
+    case 67:
+        Service = "dhcp"
+    case 68:
+        Service = "dhcpv6-client"
+    case 69:
+        Service = "tftp"
+    case 70:
+        Service = "gopher"
+    case 79:
+        Service = "finger"
+    case 80:
+        Service = "http"
+    case 81:
+        Service = "hosts2-ns"
+    case 82:
+        Service = "xfer"
+    case 83:
+        Service = "mit-ml-dev"
+    case 84:
+        Service = "ctf"
+    case 85:
+        Service = "mit-ml-dev"
+    case 88:
+        Service = "kerberos"
+    case 89:
+        Service = "su-mit-tg"
+    case 90:
+        Service = "dnsix"
+    case 91:
+        Service = "mit-ml-dev"
+    case 92:
+        Service = "supdup"
+    case 93:
+        Service = "dcp"
+    case 94:
+        Service = "objcall"
+    case 95:
+        Service = "supdup"
+    case 97:
+        Service = "timeserver"
+    case 98:
+        Service = "tacacs"
+    case 99:
+        Service = "mit-ml-dev"
+    case 101:
+        Service = "hostname"
+    case 102:
+        Service = "iso-tsap"
+    case 103:
+        Service = "gppitnp"
+    case 104:
+        Service = "acr-nema"
+    case 105:
+        Service = "cso"
+    case 106:
+        Service = "audionews"
+    case 107:
+        Service = "rtelnet"
+    case 108:
+        Service = "pop2"
+    case 109:
+        Service = "pop3"
+    case 110:
+        Service = "pop3"
+    case 111:
+        Service = "sunrpc"
+    case 112:
+        Service = "mcidas"
+    case 113:
+        Service = "auth"
+    case 114:
+        Service = "audit"
+    case 115:
+        Service = "sftp"
+    case 116:
+        Service = "ansanot"
+    case 117:
+        Service = "uucp"
+    case 118:
+        Service = "sql-net"
+    case 119:
+        Service = "nntp"
+    case 120:
+        Service = "cfdptkt"
+    case 121:
+        Service = "cft"
+    case 122:
+        Service = "erpc"
+    case 123:
+        Service = "ntp"
+    case 124:
+        Service = "buoy"
+    case 125:
+        Service = "cfnp"
+    case 126:
+        Service = "manet"
+    case 127:
+        Service = "caio"
+    case 128:
+        Service = "etcfun"
+    case 129:
+        Service = "smux"
+    case 130:
+        Service = "at"
+    case 131:
+        Service = "tivoli"
+    case 132:
+        Service = "auditd"
+    case 133:
+        Service = "matip"
+    case 134:
+        Service = "epmap"
+    case 135:
+        Service = "msrpc"
+    case 136:
+        Service = "netbios-ns"
+    case 137:
+        Service = "netbios-dgm"
+    case 138:
+        Service = "netbios-ssn"
+    case 139:
+        Service = "netbios-ssn"
+    case 140:
+        Service = "emfis-data"
+    case 141:
+        Service = "emfis-cntl"
+    case 142:
+        Service = "brf"
+    case 143:
+        Service = "imap"
+    case 144:
+        Service = "popp3"
+    case 145:
+        Service = "qud"
+    case 146:
+        Service = "ethernet"
+    case 147:
+        Service = "audionet"
+    case 148:
+        Service = "locus-map"
+    case 149:
+        Service = "tacacs-ds"
+    case 150:
+        Service = "imap3"
+    case 151:
+        Service = "fmp"
+    case 152:
+        Service = "msg-auth"
+    case 153:
+        Service = "telel"
+    case 154:
+        Service = "timed"
+    case 155:
+        Service = "kerberos-adm"
+    case 156:
+        Service = "vics"
+    case 157:
+        Service = "svr"
+    case 158:
+        Service = "x25"
+    case 159:
+        Service = "s-ftp"
+    case 160:
+        Service = "another"
+    case 161:
+        Service = "snmp"
+    case 162:
+        Service = "snmptrap"
+    case 163:
+        Service = "cmip"
+    case 164:
+        Service = "omnis"
+    case 165:
+        Service = "wsa"
+    case 166:
+        Service = "xdmcp"
+    case 167:
+        Service = "s-cab"
+    case 168:
+        Service = "link"
+    case 169:
+        Service = "secure"
+    case 170:
+        Service = "syslog"
+    case 171:
+        Service = "nap"
+    case 172:
+        Service = "lycos"
+    case 173:
+        Service = "edit"
+    case 174:
+        Service = "tcp-scan"
+    case 175:
+        Service = "ra"
+    case 176:
+        Service = "dnsix"
+    case 177:
+        Service = "xdmcp"
+    case 178:
+        Service = "nextstep"
+    case 179:
+        Service = "bgp"
+    case 180:
+        Service = "urp"
+    case 181:
+        Service = "ncs"
+    case 182:
+        Service = "ekmap"
+    case 183:
+        Service = "conn"
+    case 184:
+        Service = "cad"
+    case 185:
+        Service = "camac"
+    case 186:
+        Service = "dixie"
+    case 187:
+        Service = "rmon"
+    case 188:
+        Service = "tnmp"
+    case 189:
+        Service = "ascend"
+    case 190:
+        Service = "tic"
+    case 191:
+        Service = "micp"
+    case 192:
+        Service = "sctp"
+    case 193:
+        Service = "locus-map"
+    case 194:
+        Service = "irc"
+    case 195:
+        Service = "clusterm"
+    case 196:
+        Service = "shell"
+    case 197:
+        Service = "scap"
+    case 198:
+        Service = "remote-file"
+    case 199:
+        Service = "sas"
+    case 200:
+        Service = "csi"
+    case 201:
+        Service = "csp"
+    case 202:
+        Service = "tft"
+    case 203:
+        Service = "nfsd"
+    case 204:
+        Service = "nsr"
+    case 205:
+        Service = "cft"
+    case 206:
+        Service = "comsat"
+    case 207:
+        Service = "uucp-path"
+    case 208:
+        Service = "uucp"
+    case 209:
+        Service = "auth"
+    case 210:
+        Service = "z3950"
+    case 211:
+        Service = "news"
+    case 212:
+        Service = "ftp"
+    case 213:
+        Service = "ftp-data"
+    case 214:
+        Service = "smtp"
+    case 215:
+        Service = "http"
+    case 216:
+        Service = "smtp"
+    case 217:
+        Service = "sftp"
+    case 218:
+        Service = "pop"
+    case 219:
+        Service = "pop3"
+    case 220:
+        Service = "imap"
+    case 221:
+        Service = "imap"
+    case 222:
+        Service = "ssh"
+    case 223:
+        Service = "chat"
+    case 224:
+        Service = "emergency"
+    case 225:
+        Service = "unload"
+    case 226:
+        Service = "os-bus"
+    case 227:
+        Service = "res-bis"
+    case 228:
+        Service = "term"
+    case 229:
+        Service = "app"
+    case 230:
+        Service = "mapper"
+    case 231:
+        Service = "bna"
+    case 232:
+        Service = "pmm"
+    case 233:
+        Service = "sda"
+    case 234:
+        Service = "cim"
+    case 235:
+        Service = "prism"
+    case 236:
+        Service = "pick"
+    case 237:
+        Service = "portmapper"
+    case 238:
+        Service = "elr"
+    case 239:
+        Service = "portmapper"
+    case 240:
+        Service = "ukey"
+    case 241:
+        Service = "sdd"
+    case 242:
+        Service = "port"
+    case 243:
+        Service = "cdd"
+    case 244:
+        Service = "tcppro"
+    case 245:
+        Service = "dscp"
+    case 246:
+        Service = "tact"
+    case 247:
+        Service = "handshake"
+    case 248:
+        Service = "sample"
+    case 249:
+        Service = "port-xx"
+    case 250:
+        Service = "dmc"
+    case 251:
+        Service = "int"
+    case 252:
+        Service = "tycho"
+    case 253:
+        Service = "kiddie"
+    case 254:
+        Service = "ftp-ss"
+    case 255:
+        Service = "chat"
+    default :
+        Service = "unknown"
     }
 }
