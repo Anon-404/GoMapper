@@ -47,14 +47,14 @@ func hlpMnu() {
     fmt.Println("\nOptions:")
 	fmt.Printf("\n%s, %s : To get the help page\n", color.GreenString("-h"),color.BlueString("--help"))
 	fmt.Printf("%s, %s : To perform a port scan\n", color.GreenString("-n"),color.BlueString("--networkScan"))
-	fmt.Printf("%s, %s : To perform a port scan\n", color.GreenString("-d"),color.BlueString("--dnslookup"))
+	fmt.Printf("%s, %s : To perform a dns lookup\n", color.GreenString("-d"),color.BlueString("--dnslookup"))
 
 	fmt.Printf("\n%s, %s : Print the version number\n", color.GreenString("-v"),color.BlueString("--version"))
     
 }
 
 func version(){
-	boldGreen.Println("GoMapper version 2.3")
+	boldGreen.Println("GoMapper version 2.5")
 }
 
 func portScan(wg *sync.WaitGroup, domain string, port int) {
