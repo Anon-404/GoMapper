@@ -3,7 +3,9 @@
 **Enumeration and Network Scanner Tool**  
 *Written in Go*
 
-![GoMapper Logo](https://raw.githubusercontent.com/Anon-404/My-assets/main/GoMapper/GoMapper.jpg)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Anon-404/My-assets/main/GoMapper/GoMapper.jpg" alt="GoMapper Logo" width="200"/>
+</div>
 
 ## Features ✨
 - 🔍 **Network Scanning and OS Detection**
@@ -66,14 +68,37 @@
   ```
 
 ## Usage 🧑‍💻
-For detailed usage instructions, please refer to the [User Manual](link_to_manual).
+
+```bash
+GoMapper <option> <domain/ip>
+```
+
+### Main Options:
+- **`-a`, `--all [domain]`**  
+  🔗 **Perform all actions**  
+  Executes network scan, DNS lookup, and WHOIS lookup in a single command.
+
+- **`-n`, `--networkScan [domain]`**  
+  🌐 **Network Scan**  
+  Performs a thorough network scan, including IP, port scanning, and OS detection.
+
+- **`-d`, `--dnslookup [domain]`**  
+  🛠 **DNS Lookup**  
+  Retrieves detailed DNS records for the specified domain.
+
+- **`-w`, `--whoislookup [domain]`**  
+  🔍 **Whois Lookup**  
+  Gathers WHOIS registration data for the specified domain.
+
+### Additional Options:
+- **`-h`, `--help`**  
+  📝 **Help**  
+  Displays this help page with descriptions of all available commands.
+
+- **`-v`, `--version`**  
+  🆚 **Version**  
+  Prints the current version number of GoMapper.
+
 
 ## Contributions 🤝
 Contributions are welcome! Feel free to open issues or submit pull requests.
-
-## License 📜
-This project is licensed under the MIT License.
-
-```
-
-This version consolidates all steps into a single markdown file. You can replace `link_to_manual` with an actual link if needed.
