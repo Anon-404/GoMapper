@@ -34,7 +34,7 @@
   ```
 - **Termux:**
   ```bash
-  pkg install go -y
+  pkg install golang -y
   ```
 
 #### Step 2: Install GoMapper
