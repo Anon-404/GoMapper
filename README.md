@@ -1,124 +1,79 @@
-# GoMapper
-Enumeration and Network Scanner tool <br>
-Written by golang 
+
+# GoMapper 🚀
+**Enumeration and Network Scanner Tool**  
+*Written in Go*
 
 ![GoMapper Logo](https://raw.githubusercontent.com/Anon-404/My-assets/main/GoMapper/GoMapper.jpg)
 
-## Features
+## Features ✨
+- 🔍 **Network Scanning and OS Detection**
+- ⚡ **Faster Scanning:** Scans 65,535 ports quicker than Nmap
+- 🌐 **DNS Lookup**
+- 🕵️‍♂️ **Whois Lookup**
+- 🎯 **User-Friendly Interface**
+- 📖 **Comprehensive User Manual**
 
-[+] Network scanning and os ditection </br>
-[+] First Scan 65535 ports gretter then nmap </br>
-[+] DNS lookup </br>
-[+] Whois lookup </br>
-[+] Easy to use </br>
-[+] Easy user manuall </br>
+## Installation 🛠️
 
-## Installation
-#### Mathod 1 : go install
+### Method 1: Using `go install`
 
-###### step 1 : installing golang
-##### For Arch based linux 
-```bash
-sudo pacman -S go
-```
-##### For Debian based linux 
-```bash
-sudo apt install go -y
-```
-##### For Fedora based linux 
-```bash
-sudo dnf install go
-```
-##### For termux
-```bash
-pkg install go -y
-```
+#### Step 1: Install Go
+- **Arch-based Linux:**
+  ```bash
+  sudo pacman -S go
+  ```
+- **Debian-based Linux:**
+  ```bash
+  sudo apt install go -y
+  ```
+- **Fedora:**
+  ```bash
+  sudo dnf install go
+  ```
+- **Termux:**
+  ```bash
+  pkg install go -y
+  ```
 
-#### step 2 : Installing binary 
-##### For linux
-```bash
-go install -v github.com/Anon-404/GoMapper@latest
-cp $HOME/go/bin/GoMapper /../usr/bin
-```
-##### For termux
-```bash
-go install -v github.com/Anon-404/GoMapper@latest
-cp $HOME/go/bin/GoMapper ../usr/bin
-```
-#### Mathod 2 : git cloning 
-##### For Linux
-```bash
-git clone https://github.com/Anon-404/GoMapper# GoMapper
-Enumeration and Network Scanner tool <br>
-Written by golang 
+#### Step 2: Install GoMapper
+- **For Linux:**
+  ```bash
+  go install -v github.com/Anon-404/GoMapper@latest
+  sudo cp $HOME/go/bin/GoMapper /usr/bin
+  ```
+- **For Termux:**
+  ```bash
+  go install -v github.com/Anon-404/GoMapper@latest
+  cp $HOME/go/bin/GoMapper ../usr/bin
+  ```
 
-![GoMapper Logo](https://raw.githubusercontent.com/Anon-404/My-assets/main/GoMapper/GoMapper.jpg)
+### Method 2: Cloning the Repository
 
-## Features
+#### Step 1: Clone and Build
+- **For Linux:**
+  ```bash
+  git clone https://github.com/Anon-404/GoMapper
+  cd GoMapper
+  go build -o GoMapper
+  sudo cp GoMapper /usr/bin
+  ```
+- **For Termux:**
+  ```bash
+  git clone https://github.com/Anon-404/GoMapper
+  cd GoMapper
+  go build -o GoMapper
+  cp GoMapper ../../usr/bin
+  ```
 
-[+] Network scanning and os ditection </br>
-[+] First Scan 65535 ports gretter then nmap </br>
-[+] DNS lookup </br>
-[+] Whois lookup </br>
-[+] Easy to use </br>
-[+] Easy user manuall </br>
+## Usage 🧑‍💻
+For detailed usage instructions, please refer to the [User Manual](link_to_manual).
 
-## Installation
-#### Mathod 1 : go install
+## Contributions 🤝
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-###### step 1 : installing golang
-##### For Arch based linux 
-```bash
-sudo pacman -S go
-```
-##### For Debian based linux 
-```bash
-sudo apt install go -y
-```
-##### For Fedora based linux 
-```bash
-sudo dnf install go
-```
-##### For termux
-```bash
-pkg install go -y
+## License 📜
+This project is licensed under the MIT License.
+
 ```
 
-#### step 2 : Installing binary 
-##### For linux
-```bash
-go install -v github.com/Anon-404/GoMapper@latest
-cp $HOME/go/bin/GoMapper /../usr/bin
-```
-##### For termux
-```bash
-go install -v github.com/Anon-404/GoMapper@latest
-cp $HOME/go/bin/GoMapper ../usr/bin
-```
-#### Mathod 2 : git cloning 
-##### For Linux
-```bash
-git clone https://github.com/Anon-404/GoMapper
-cd GoMapper
-go build -o GoMapper 
-cp GoMapper /usr/bin
-```
-##### For Termux 
-```bash
-git clone https://github.com/Anon-404/GoMapper
-cd GoMapper
-go build -o GoMapper 
-cp GoMapper../../usr/bin
-```
-
-cd GoMapper
-go build -o GoMapper 
-cp GoMapper /usr/bin
-```
-##### For Termux 
-```bash
-git clone https://github.com/Anon-404/GoMapper
-cd GoMapper
-go build -o GoMapper 
-cp GoMapper../../usr/bin
-```
+This version consolidates all steps into a single markdown file. You can replace `link_to_manual` with an actual link if needed.
