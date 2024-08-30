@@ -26,15 +26,24 @@
   ```
 - **Debian-based Linux:**
   ```bash
-  sudo apt install go -y
+  sudo apt install golang -y
   ```
 - **Fedora:**
   ```bash
-  sudo dnf install go
+  sudo dnf install golang
   ```
 - **Termux:**
   ```bash
   pkg install golang -y
+  ```
+
+- **OpenSUSE:**
+  ```bash
+  sudo zypper install go
+  ```
+- **Void Linux:**
+  ```bash
+  sudo xbps-install go
   ```
 
 #### Step 2: Install GoMapper
